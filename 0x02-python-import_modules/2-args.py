@@ -1,5 +1,6 @@
 if __name__ == "__main__":
         import sys
+
         value = len(sys.argv) - 1
         if value == 0:
             print("0 arguments.")
