@@ -3,6 +3,7 @@
 
 
 class Square:
+    """Defines Square Class"""
     def __init__(self, size=0):
         """Constructor
         Args:
