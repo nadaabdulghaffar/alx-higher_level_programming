@@ -1,0 +1,51 @@
+the 0-add_integer Module 
+========================
+using ''add_integer''
+---------------------
+import function:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test two integer:
+
+    >>> add_integer(5,9)
+    14
+
+Test postive , negative integer:
+
+    >>> add_integer(-3,6)
+    3
+
+Test two negative integer:
+
+    >>> add_integer(-2,-3)
+    -5
+
+Test one int argument:
+
+    >>> add_integer(2)
+    100
+
+Test one int argument and check default second:
+
+    >>> add_integer(0)
+    98
+
+Test two float numbers:
+
+    >>> add_integer(3.5,11.1)
+    14
+
+Test first arg invalid:
+
+    >>> add_integer("Test", 7)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+
+Test second arg invalid:
+
+    >>> add_integer(8,"school")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
