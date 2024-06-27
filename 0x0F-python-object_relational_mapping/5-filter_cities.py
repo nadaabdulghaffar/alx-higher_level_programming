@@ -25,7 +25,8 @@ if __name__ == '__main__':
     state = sys.argv[4]
     query = """
             SELECT citices.name FROM cities
-            JOIN ON cities.state_id = states.id
+            JOIN states
+            ON cities.state_id = states.id
             WHERE states.name = %s ORDER BY cities.id ASC
             """
 
