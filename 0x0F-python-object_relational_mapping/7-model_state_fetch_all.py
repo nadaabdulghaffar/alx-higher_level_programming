@@ -1,4 +1,4 @@
-8-model_state_fetch_first.py
+#!/usr/bin/python3
 """ lists all State objects from the database"""
 
 
