@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-file that contains the class definition of a State
-"""
+""" class of the definition of a State """
+
 
 from sqlalchemy import Columan, String, Integer
 from sqlalchemy.esxt.declarative import declarative_base
