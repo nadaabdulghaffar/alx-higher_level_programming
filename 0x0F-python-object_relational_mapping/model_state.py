@@ -11,9 +11,8 @@ Base = declarative_base()
 
 class State(Base):
     """
-    class of the definition of a State and an instance Base
     states table:
-        id:Primary Key
+        id: Primary Key
         name: name of the state
     """
 
