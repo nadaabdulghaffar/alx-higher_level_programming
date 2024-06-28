@@ -1,9 +1,10 @@
+
 #!/usr/bin/python3
-""" class of the definition of a State """
+"""class definition of a State"""
 
 
-from sqlalchemy import Columan, String, Integer
-from sqlalchemy.esxt.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
@@ -11,10 +12,9 @@ Base = declarative_base()
 class State(Base):
     """
     states table:
-        id: Primary Key
+        id: primary key
         name: name of the state
     """
-
     __tablename__ = 'states'
-    id = Columan(Integer, primary_key=True, nullable=False, autoincrement=True)
-    name = Columan(String(128), nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    name = Column(String(128), nullable=False)
