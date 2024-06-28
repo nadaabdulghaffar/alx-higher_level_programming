@@ -11,10 +11,10 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == '__main__':
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Base.metadata.creart_all(engine)
-    session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
-    newState = State("Louisiana")
+    newState = State(name="Louisiana")
     session.add(newState)
     session.commit()
     print(newState.id)
