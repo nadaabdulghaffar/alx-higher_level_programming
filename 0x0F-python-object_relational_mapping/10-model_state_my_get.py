@@ -16,6 +16,6 @@ if __name__ == '__main__':
     session = Session()
     StateName = sys.argv[4]
 
-    statepassed = session.query(State).filter(State.name == StateName)
+    statepassed = session.query(State).filter(State.name == StateName).first()
     print("{}".format(statepassed.id) if statepassed else "Not found")
     session.close()
