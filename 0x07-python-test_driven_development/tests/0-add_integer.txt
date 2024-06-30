@@ -1,51 +1,50 @@
-the 0-add_integer Module 
-========================
-using ''add_integer''
----------------------
-import function:
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+----------------------
+
+# First import funciton from the module:
     >>> add_integer = __import__('0-add_integer').add_integer
 
-Test two integer:
+# Test case 1: Adding two integers
+	>>> add_integer(1, 2)
+	3
 
-    >>> add_integer(5,9)
-    14
+# Test case 2: Float overflow
+	>>> add_integer(float('NaN'), 10)
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
 
-Test postive , negative integer:
+# Test case 3: Adding a single integer (using the default value for b)
+	>>> add_integer(2)
+	100
 
-    >>> add_integer(-3,6)
-    3
+# Test case 4: Adding a float and an integer
+	>>> add_integer(100.3, -2)
+	98
 
-Test two negative integer:
+# Test case 6: Adding None (no value provided for a)
+	>>> add_integer('1', 0)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
 
-    >>> add_integer(-2,-3)
-    -5
+# Test case 7: Adding None (no value provided for v)
+	>>> add_integer(0, "rad")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
 
-Test one int argument:
+# Test case 8: Dividing matrix elements by infinity should raise an OverflowError.
+	>>> add_integer(float('inf'), 1)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
 
-    >>> add_integer(2)
-    100
-
-Test one int argument and check default second:
-
-    >>> add_integer(0)
-    98
-
-Test two float numbers:
-
-    >>> add_integer(3.5,11.1)
-    14
-
-Test first arg invalid:
-
-    >>> add_integer("Test", 7)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
-
-Test second arg invalid:
-
-    >>> add_integer(8,"school")
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
+# Test case 9: Missing two arguments
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+	
+# Test case 10: Adding a negative float and a positive integer
+	>>> add_integer(-5.5, [1])
+	Traceback (most recent call last):
+	TypeError: b must be an integer
